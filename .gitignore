@@ -1,3 +1,6 @@
 .vagrant/
 scratch/
 *.old
+
+# Tend to be too big, even with LFS
+*.box
