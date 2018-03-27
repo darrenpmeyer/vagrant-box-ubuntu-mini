@@ -1,0 +1,16 @@
+{
+  "name": "darrenpmeyer/ubuntu-xenial64-mini",
+  "description": "This box contains Ubuntu 12.04 LTS 64-bit Mini",
+  "versions": [
+    {
+      "version": "0.1.0",
+      "providers": [
+        {
+          "name": "vmware",
+          "url": "https://github.com/darrenpmeyer/vagrant-box-ubuntu-mini/blob/master/ubuntu-xenial64-mini.box",
+          "checksum_type": "sha256",
+        }
+      ]
+    }
+  ]
+}

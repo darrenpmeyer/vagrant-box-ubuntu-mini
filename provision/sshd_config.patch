@@ -1,0 +1,8 @@
+--- sshd_config.orig	2018-03-27 11:36:50.247831719 -0500
++++ /etc/ssh/sshd_config	2018-03-27 11:37:45.421184640 -0500
+@@ -86,3 +86,5 @@
+ # PAM authentication, then enable this but set PasswordAuthentication
+ # and ChallengeResponseAuthentication to 'no'.
+ UsePAM yes
++
++UseDNS no
