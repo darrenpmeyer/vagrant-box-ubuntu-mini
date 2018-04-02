@@ -17,7 +17,7 @@ Or you can specify a `Vagrantfile` with content including:
 
 	Vagrant.configure("2") do |config|
 	  config.vm.box = "darrenpmeyer/ubuntu-xenial64-mini"
-	  config.vm.box_version = "0.1.0"
+	  config.vm.box_version = "0.2.0"
 	end
 
 The [Vagrant Cloud entry](https://app.vagrantup.com/darrenpmeyer/boxes/ubuntu-xenial64-mini) has more details
