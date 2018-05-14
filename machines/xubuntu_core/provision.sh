@@ -10,7 +10,9 @@ then
 	# sudo reboot
 
 	# reinstall vmware tools
-	sudo vmware-tools-distrib/vmware-install.pl --force-install --default
+	if [ -d vmware-tools-distrib]; then
+            sudo vmware-tools-distrib/vmware-install.pl --force-install --default
+        fi
 fi 
 
 echo "Xubuntu installed, adding packages"

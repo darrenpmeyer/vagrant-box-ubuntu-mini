@@ -52,7 +52,21 @@ then
 
 	wd=$(pwd)
 	cd "$vmdir"
-	tar czvf "$wd/$boxfile" ./*
+        echo "Removing unneeded files"
+        rm *.log
+        rm -rf caches
+        rm -rf *.lck
+
+        mixins="$wd/provision/boxfile"
+        if [[ -d "$mixins" ]]
+        then
+            echo "Adding boxfile mixins from '$mixins'"
+            cp -pv "$mixins"/* .
+        fi
+            
+
+	echo "Compressing image to '$boxfile'"
+        tar czvf "$wd/$boxfile" ./*
 
 	cd "$wd"
 fi

@@ -4,3 +4,7 @@ scratch/
 
 # Tend to be too big, even with LFS
 *.box
+*.swp
+
+# Metadata
+.DS_Store
