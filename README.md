@@ -2,7 +2,7 @@
 
 A Vagrant Box for VMWare that's the most recent LTS Ubuntu Mini, with nothing added except open-vm-tools
 
-Currently **Ubuntu 16.04 Xenial Xerus (64-bit)**
+Currently **Ubuntu 18.04 Bionic Beaver (64-bit)**
 
 # Using the box
 
@@ -10,17 +10,16 @@ This box is ~1GB, and is intended as a base to build on. It's hosted on HashiCor
 
 You can do
 
-	vagrant init darrenpmeyer/ubuntu-xenial64-mini
+	vagrant init darrenpmeyer/ubuntu-bionic64-mini
 	vagrant up
 
 Or you can specify a `Vagrantfile` with content including:
 
 	Vagrant.configure("2") do |config|
-	  config.vm.box = "darrenpmeyer/ubuntu-xenial64-mini"
-	  config.vm.box_version = "0.2.0"
+	  config.vm.box = "darrenpmeyer/ubuntu-bionic64-mini"
 	end
 
-The [Vagrant Cloud entry](https://app.vagrantup.com/darrenpmeyer/boxes/ubuntu-xenial64-mini) has more details
+The [Vagrant Cloud entry](https://app.vagrantup.com/darrenpmeyer/boxes/ubuntu-bionic64-mini) has more details
 
 # Using this repo to build your own base box
 
@@ -33,7 +32,7 @@ The [Vagrant Cloud entry](https://app.vagrantup.com/darrenpmeyer/boxes/ubuntu-xe
 	1. Apply `sshd_config.patch` and `sudoers.patch` from the `provision` directory to the guest's `/etc/ssh/sshd_config` and `/etc/sudoers`, respectively. You'll need to use `sudo` to do this.
 	2. Copy the contents of `vagrant.pub` from the `provision` directory to the `vagrant` user's `~/.ssh/authorized_keys` file
 	3. `chmod 0700 ~/.ssh ; chmod 0600 ~/.ssh/authorized_keys`
-	4. `sudo apt-get install open-vm-tools`
+	4. Install the VMware tools (ingoring the warning about preferring `open-vm-tools` -- Vagrant expects the official tools)
 	5. Shutdown (e.g. `sudo poweroff`)
 4. If you're not using the `vmware_fusion` provider, change the `metadata.json` file appropriately. Copy `metadata.json` to the `.vmwarevm` directory for your new box. It needs to be UTF8 _without BOM_; you can use the `encode_metadata.py` script to encode it properly. 
 5. Run `./vmware-clean.sh package /path/to/youre/vmware_machine.vmwarevm` -- this will defrag and shrink the VM disks then create the `.box` file. (VMWare Fusion only! Figure out the equivalent for your provider if needed)
